@@ -8,7 +8,7 @@ export function Reveal({ children, className, delay = 0 }: { children: ReactNode
     const el = ref.current;
     if (!el) return;
     const io = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) { el.classList.add("is-visible"); io.disconnect(); } },
+      (entries) => { if (entries[0]?.isIntersecting) { el.classList.add("is-visible"); io.disconnect(); } },
       { threshold: 0.15 },
     );
     io.observe(el);
@@ -26,7 +26,7 @@ const variants = {
   light: "border border-offwhite/40 text-offwhite hover:bg-offwhite hover:text-espresso",
 };
 
-export function CTA({ href, children, variant = "solid", external, className }: { href: string; children: ReactNode; variant?: keyof typeof variants; external?: boolean; className?: string }) {
+export function CTA({ href, children, variant = "solid", external, className }: { href: string; children: ReactNode; variant?: keyof typeof variants; external?: boolean; className?: string | undefined }) {
   return (
     <a href={href} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})} className={cn(base, variants[variant], className)}>
       {children}
@@ -36,7 +36,7 @@ export function CTA({ href, children, variant = "solid", external, className }: 
 }
 
 /** WhatsApp button: renders a real link only once the number is configured in src/config/site.ts. */
-export function WhatsAppCTA({ children, variant = "solid", className }: { children: ReactNode; variant?: keyof typeof variants; className?: string }) {
+export function WhatsAppCTA({ children, variant = "solid", className }: { children: ReactNode; variant?: keyof typeof variants; className?: string | undefined }) {
   const href = whatsappLink();
   if (href) return <CTA href={href} external variant={variant} className={className}>{children}</CTA>;
   return (
