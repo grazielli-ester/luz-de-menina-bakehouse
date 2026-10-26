@@ -19,7 +19,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Img({ src, alt, className, eager }: { src: string; alt: string; className?: string; eager?: boolean }) {
-  return <img src={src} alt={alt} loading={eager ? "eager" : "lazy"} className={`h-full w-full object-cover ${className ?? ""}`} />;
+  return <img src={src} alt={alt} loading={eager ? "eager" : "lazy"} className={`h-full w-full scale-[1.1] object-cover ${className ?? ""}`} />;
 }
 
 function Index() {
