@@ -25,7 +25,7 @@ export function Header() {
               {n.label}
             </a>
           ))}
-          <WhatsAppCTA className="px-5 py-2.5">Entre em contato</WhatsAppCTA>
+          <WhatsAppCTA className="px-5 py-2.5">Falar no WhatsApp</WhatsAppCTA>
         </nav>
         <button className="rounded-full p-2 text-espresso lg:hidden" onClick={() => setOpen(!open)} aria-label={open ? "Fechar menu" : "Abrir menu"} aria-expanded={open}>
           {open ? <X /> : <Menu />}
@@ -38,7 +38,7 @@ export function Header() {
               <li key={n.href}><a href={n.href} onClick={() => setOpen(false)} className="font-serif text-2xl text-espresso">{n.label}</a></li>
             ))}
           </ul>
-          <WhatsAppCTA className="mt-6 w-full">Entre em contato</WhatsAppCTA>
+          <WhatsAppCTA className="mt-6 w-full">Falar no WhatsApp</WhatsAppCTA>
         </nav>
       )}
     </header>
