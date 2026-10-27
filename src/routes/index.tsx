@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Instagram, MapPin, Clock, MessageCircle } from "lucide-react";
-import { site, photos, menu, nav, whatsappLink } from "@/config/site";
+import { site, photos, menu, nav, reels, whatsappLink } from "@/config/site";
 import { Header } from "@/components/landing/Header";
 import { CTA, Divider, Logo, Reveal, WhatsAppCTA } from "@/components/landing/ui";
 
@@ -29,6 +29,7 @@ function Index() {
       <main>
         <Hero />
         <Cardapio />
+        <Receitas />
         <Ceramica />
         <Contato />
       </main>
