@@ -136,7 +136,7 @@ function Receitas() {
 
 function Ceramica() {
   return (
-    <section id="ceramica" className="py-20 lg:py-28">
+    <section id="ceramica" className="bg-sand/50 py-20 lg:py-28">
       <div className="mx-auto grid max-w-5xl items-center gap-12 px-6 lg:grid-cols-2">
         <Reveal>
           <div className="relative mx-auto max-w-md">
