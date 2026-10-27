@@ -314,7 +314,7 @@ function Footer() {
     <footer className="bg-espresso py-16 text-offwhite">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 md:grid-cols-3 lg:px-10">
         <div>
-          <Logo light />
+          <Logo light className="h-16 w-16" />
           <p className="mt-5 font-script text-2xl text-gold">Feito com amor e carinho.</p>
           <p className="mt-2 text-sm text-offwhite/70">{site.city}</p>
         </div>

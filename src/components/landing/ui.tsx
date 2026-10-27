@@ -1,6 +1,8 @@
 import { useEffect, useRef, type ReactNode } from "react";
 import { whatsappLink } from "@/config/site";
 import { cn } from "@/lib/utils";
+import logoAsset from "@/assets/logo.png.asset.json";
+
 
 export function Reveal({ children, className, delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -47,28 +49,23 @@ export function WhatsAppCTA({ children, variant = "solid", className }: { childr
   );
 }
 
-export function Lamp({ className }: { className?: string }) {
+/** The brand's real logo: round badge with the light bulb, the name and "Ateliê & Café". */
+export function Logo({ light, className }: { light?: boolean; className?: string | undefined }) {
   return (
-    <svg viewBox="0 0 32 40" fill="none" className={className} aria-hidden>
-      <path d="M16 3a11 11 0 0 0-6.5 19.9c1.4 1 2.2 2.4 2.2 4V29h8.6v-2.1c0-1.6.8-3 2.2-4A11 11 0 0 0 16 3Z" stroke="currentColor" strokeWidth="1.4" />
-      <path d="M12.5 32.5h7M13.5 36h5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-      <path d="M13 17c1.2 2 2 3.5 3 3.5S17.8 19 19 17" stroke="var(--gold)" strokeWidth="1.4" strokeLinecap="round" />
-      <path d="M16 20.5V28" stroke="var(--gold)" strokeWidth="1.4" />
-    </svg>
+    <img
+      src={logoAsset.url}
+      alt="Luz de Menina Ateliê & Café"
+      width={72}
+      height={72}
+      className={cn(
+        "aspect-square rounded-full object-cover shadow-soft",
+        light ? "ring-1 ring-offwhite/25" : "ring-1 ring-espresso/10",
+        className,
+      )}
+    />
   );
 }
 
-export function Logo({ light }: { light?: boolean }) {
-  return (
-    <span className={cn("flex items-center gap-2.5", light ? "text-offwhite" : "text-espresso")}>
-      <Lamp className="h-9 w-7" />
-      <span className="flex flex-col leading-none">
-        <span className="font-script text-2xl">Luz de Menina</span>
-        <span className="mt-0.5 text-[0.6rem] font-semibold tracking-[0.4em]">CAFÉ</span>
-      </span>
-    </span>
-  );
-}
 
 export function Divider() {
   return (

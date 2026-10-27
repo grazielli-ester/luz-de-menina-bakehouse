@@ -16,7 +16,9 @@ export function Header() {
   return (
     <header className={cn("fixed inset-x-0 top-0 z-50 transition-all duration-500", scrolled || open ? "bg-offwhite/90 shadow-soft backdrop-blur-md" : "bg-transparent")}>
       <div className={cn("mx-auto flex max-w-7xl items-center justify-between px-6 transition-all duration-500 lg:px-10", scrolled ? "py-3" : "py-5")}>
-        <a href="#inicio" aria-label="Luz de Menina Ateliê & Café — início"><Logo /></a>
+        <a href="#inicio" aria-label="Luz de Menina Ateliê & Café — início"><Logo className={cn("transition-all duration-500", scrolled ? "h-11 w-11" : "h-14 w-14")} /></a>
+
+
         <nav aria-label="Principal" className="hidden items-center gap-8 lg:flex">
           {nav.map((n) => (
             <a key={n.href} href={n.href} className="relative text-sm text-espresso/80 transition-colors hover:text-espresso after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-gold after:transition-all hover:after:w-full">
