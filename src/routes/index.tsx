@@ -101,6 +101,39 @@ function Cardapio() {
   );
 }
 
+function Receitas() {
+  return (
+    <section id="receitas" className="py-20 lg:py-28">
+      <div className="mx-auto max-w-6xl px-6">
+        <Reveal className="mx-auto max-w-2xl text-center">
+          <p className="eyebrow">Receitas no Instagram</p>
+          <h2 className="mt-5 text-4xl text-espresso sm:text-5xl">Venha cozinhar com a gente.</h2>
+          <p className="mt-5 text-coffee">No nosso Instagram você encontra vídeos de receitas e bastidores do ateliê.</p>
+        </Reveal>
+        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {reels.map((r, i) => (
+            <Reveal key={r.id} delay={i * 100} className="mx-auto w-full max-w-sm">
+              <div className="overflow-hidden rounded-sm border border-border bg-offwhite shadow-soft">
+                <iframe
+                  src={`https://www.instagram.com/reel/${r.id}/embed`}
+                  title={r.title}
+                  className="h-[580px] w-full"
+                  loading="lazy"
+                  allowFullScreen
+                  allow="encrypted-media; clipboard-write"
+                />
+              </div>
+            </Reveal>
+          ))}
+        </div>
+        <Reveal delay={150} className="mt-12 text-center">
+          <CTA href={site.instagramUrl} external variant="outline">Ver mais no Instagram</CTA>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 function Ceramica() {
   return (
     <section id="ceramica" className="py-20 lg:py-28">
