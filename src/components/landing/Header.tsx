@@ -38,7 +38,7 @@ export function Header() {
               <li key={n.href}><a href={n.href} onClick={() => setOpen(false)} className="font-serif text-2xl text-espresso">{n.label}</a></li>
             ))}
           </ul>
-          <WhatsAppCTA className="mt-6 w-full">Entre em contato</WhatsAppCTA>
+          <WhatsAppCTA className="mt-6 w-full">Falar no WhatsApp</WhatsAppCTA>
         </nav>
       )}
     </header>
