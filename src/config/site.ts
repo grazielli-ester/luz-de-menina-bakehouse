@@ -45,8 +45,16 @@ export const menu = [
   { group: "Doces", items: ["Cookie tradicional", "Brookie", "Cinnamon roll tradicional"] },
 ];
 
+/** Reels do Instagram incorporados no site (só o código do reel). */
+export const reels = [
+  { id: "De21u4zRFfN", title: "Receita da Luz de Menina" },
+  { id: "DcCFbXvJ_g3", title: "Receita da Luz de Menina" },
+  { id: "DbEMAKIxi5-", title: "Receita da Luz de Menina" },
+];
+
 export const nav = [
   { label: "Cardápio", href: "#cardapio" },
+  { label: "Receitas", href: "#receitas" },
   { label: "Cerâmica", href: "#ceramica" },
   { label: "Contato", href: "#contato" },
 ];
